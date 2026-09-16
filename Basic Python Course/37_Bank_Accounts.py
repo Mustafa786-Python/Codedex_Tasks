@@ -40,6 +40,9 @@ class BankAccount:
         print(f"You Deposit {money:.2f}")
 
     def withdraw(self, money):
+        if money > self.balance:
+            print("Insufficeint Funds")
+            return
         self.balance = self.balance - money
         print(f"You Withdraw {money:.2f}")
 
@@ -50,7 +53,7 @@ class BankAccount:
 print("Account 1")
 ali = BankAccount("Ali", "Khan", 1001, "Savings", 1234, 500000.0)
 ali.deposit(25000)
-ali.withdraw(1000)
+ali.withdraw(1000000000)
 ali.current_balance()
 print()
 
